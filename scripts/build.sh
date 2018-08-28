@@ -5,8 +5,8 @@ set -e
 cd "$(readlink -f "$(dirname "${BASH_SOURCE}")")"/..
 
 BUILD_DATE=$( date --iso-8601=seconds --utc )
-#BASE="homeautomationstack/freeipa-dhas-${ARCH}_linux"
-BASE="homeautomationstack/freeipa-dhas"
+#BASE="homeautomationstack/dhas-freeipa-${ARCH}_linux"
+BASE="homeautomationstack/dhas-freeipa"
 
 if [[ -n "${ARCH}" && "${ARCH}" != "amd64" ]]; then
   if [ "${ARCH}" != "i386" ]; then
