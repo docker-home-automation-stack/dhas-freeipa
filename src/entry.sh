@@ -10,7 +10,7 @@ if [ -s /data/ipa.csr ]; then
       cat /certs/ipa.csr.error.txt
       exit 10
     elif [ -f /certs/ipa.csr.processing ]; then
-      echo "CA is processing CSR ..."
+      echo "CA is processing CSR: $(cat /certs/ipa.csr.processing) ..."
     else
       echo "Waiting for CA to sign CSR ..."
       cp -n /data/ipa.csr /certs/ipa.csr
