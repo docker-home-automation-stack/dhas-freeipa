@@ -21,7 +21,6 @@ fi
 
 if [ ! -s /etc/ipa/ca.crt ] && [ -s /data/ipa.csr ] && [ -s /certs/ipa.crt ]; then
   echo "Detected externally signed CA certificate - continuing local CA configuration"
-  rm /data/ipa.csr
   chmod o+r /certs/ca.crt
   chmod o+r /certs/ipa.crt
   exec $@ --external-cert-file=/certs/ipa.crt --external-cert-file=/certs/ca.crt
